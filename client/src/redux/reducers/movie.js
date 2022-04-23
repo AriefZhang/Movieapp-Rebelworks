@@ -1,5 +1,6 @@
 const movieState = {
-  movie: [],
+  movies: [],
+  genres: [],
   isLoading: true,
 };
 
@@ -9,7 +10,12 @@ export default function movies(state = movieState, actions) {
     case "movie/fetchMovie":
       return {
         ...state,
-        movie: payload
+        movies: payload
+      }
+    case "genre/fetchMovie":
+      return {
+        ...state,
+        genres: payload
       }
     case "loading/fetchMovie":
       return {

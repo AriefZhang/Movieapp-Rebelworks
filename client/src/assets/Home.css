@@ -3,3 +3,28 @@
     background-color: lightblue;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#Container {
+  max-width: 1440px;
+  margin: auto;
+  background-color: #1D1D1D;
+}
+
+#Container_2 {
+  padding-left: 0;
+}
+
+.movie_card {
+  margin-left: 165px;
+}
+
+.text_left {
+  text-align: left;
+  margin-bottom: 24px;
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+}
