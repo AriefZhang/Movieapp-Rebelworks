@@ -9,6 +9,7 @@
   position: relative;
   display: flex;
   padding: 0;
+  margin-bottom: 30px
 }
 
 #Card img { 
@@ -16,7 +17,7 @@
 }
 
 #Card:hover img{ 
-  transform: scale(1.2); 
+  transform: scale(1.1); 
 }
 
 #Card_Blend {
@@ -91,7 +92,57 @@
   margin-bottom: calc(50% - 16/2);
 }
 
+.tag_watch {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  max-width: 244px;
+  margin-bottom: 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  display: none;
+  /* transition: all .2s linear;  */
+  animation: fadeInAnimation ease 0.8s;
+  animation-iteration-count: 0.5;
+  animation-fill-mode: forwards;
+  z-index: 15;
+}
+
+#Card:hover .tag_watch {
+  display: flex;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.text_watch {
+  text-align: left;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  margin: 0px;
+}
+
+.yellow {
+  color: rgba(255, 233, 34, 1);
+  margin-top: calc(50% - 16/2);
+  margin-bottom: calc(50% - 16/2);
+}
+
 .star {
   text-align: left;
   margin-top: 11px;
+}
+
+.arrow {
+  margin-left: 12px;
 }

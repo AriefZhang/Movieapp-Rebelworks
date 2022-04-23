@@ -1,16 +1,16 @@
 import "../assets/Card.css";
 import { useState, useEffect } from "react";
-import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsStarFill, BsChevronRight } from "react-icons/bs";
 
 export default function Card({ movie, genres, index }) {
   const url = "https://image.tmdb.org/t/p/w342" + movie.poster_path;
   const [genre, setGenres] = useState([]);
-  const [stars, setStar] = useState([]);
+  const [stars] = useState([]);
 
   const checkGenre = () => {
     if (genres) {
       const listGenre = movie.genre_ids.map((id) => {
-        const [temp] = genres.filter((gen) => id == gen.id);
+        const [temp] = genres.filter((gen) => id === gen.id);
         return temp;
       });
       setGenres(listGenre);
@@ -29,7 +29,7 @@ export default function Card({ movie, genres, index }) {
 
   return (
     <>
-      {index % 4 == 0 ? (
+      {index % 4 === 0 ? (
         <div id="Card" className="col-md-3" style={{ marginRight: "0px" }}>
           <div id="Card_Content">
             <div className="row text-center flex tag margin_tag">
@@ -47,6 +47,10 @@ export default function Card({ movie, genres, index }) {
               })}
             </div>
             ,<h1 className="text tag">{movie.original_title}</h1>
+          </div>
+          <div className="tag_watch">
+            <h5 className="yellow text_watch">Watch now</h5>
+            <BsChevronRight className="yellow arrow" />
           </div>
           <div id="Card_Blend" />
           <img id="Card_Img" src={url} alt="" />
@@ -69,6 +73,10 @@ export default function Card({ movie, genres, index }) {
               })}
             </div>
             ,<h1 className="text tag">{movie.original_title}</h1>
+          </div>
+          <div className="tag_watch">
+            <h5 className="yellow text_watch">Watch now</h5>
+            <BsChevronRight className="yellow arrow" />
           </div>
           <div id="Card_Blend" />
           <img id="Card_Img" src={url} alt="" />

@@ -1,6 +1,7 @@
 const movieState = {
   movies: [],
   genres: [],
+  pages: 0,
   isLoading: true,
 };
 
@@ -10,12 +11,17 @@ export default function movies(state = movieState, actions) {
     case "movie/fetchMovie":
       return {
         ...state,
-        movies: payload
+        movies: state.movies.concat(payload)
       }
     case "genre/fetchMovie":
       return {
         ...state,
         genres: payload
+      }
+    case "pages/fetchMovie":
+      return {
+        ...state,
+        pages: payload
       }
     case "loading/fetchMovie":
       return {
