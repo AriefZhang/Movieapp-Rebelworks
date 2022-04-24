@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import { RiLoader4Line } from "react-icons/ri";
 import Card from "../components/Card";
-import Carousel from "../components/Carousel";
+import MovieCarousel from "../components/Carousel";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ export default function Home() {
     <div id="Container">
       <div id="Container_2" className="container-fluid">
         <div className="carausell">
-          <Carousel movies={movies}/>
+          <MovieCarousel movies={movies}/>
         </div>
         <h1 className="movie_card text_left">Playing Now</h1>
         <div >

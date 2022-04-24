@@ -1,6 +1,10 @@
 const movieState = {
   movies: [],
   genres: [],
+  movie: {},
+  similar: [],
+  casts: [],
+  similarPages: 0,
   pages: 0,
   isLoading: true,
 };
@@ -27,6 +31,26 @@ export default function movies(state = movieState, actions) {
       return {
         ...state,
         isLoading: payload
+      }
+    case "movieById/fetchMovie":
+      return {
+        ...state,
+        movie: payload
+      }
+    case "similar/fetchMovie":
+      return {
+        ...state,
+        similar: state.similar.concat(payload)
+      }
+    case "pagesSimilar/fetchMovie":
+      return {
+        ...state,
+        similarPages: payload
+      }
+    case "movieCast/fetchMovie":
+      return {
+        ...state,
+        casts: payload
       }
 
     default:
