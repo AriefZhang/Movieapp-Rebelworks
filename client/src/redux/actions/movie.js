@@ -84,6 +84,7 @@ export function asyncFetchMovies(page) {
 }
 
 export function asyncMovieById(id) {
+  console.log(id)
   return (dispatch) => {
     return themoviedb
       .get("movie/" + id + process.env.REACT_APP_API_KEY)

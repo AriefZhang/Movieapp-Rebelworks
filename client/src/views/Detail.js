@@ -134,7 +134,7 @@ export default function Detail() {
                   </h1>
                 </div>
                 <p className="white roboto-400 size-16 line-height-32">
-                  {movie.overview.split(".")[0]}
+                  {movie?.overview?.split(".")[0]}
                 </p>
               </div>
             </div>
